@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca de Personagens Disney</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <img src="logo1.jpg" alt="Logo Disney" class="logo">
+
+    <h1>Personagens Disney</h1>
+
+    <form id="searchForm" class="search-box">
+      <input type="text" id="searchInput" placeholder="Digite o nome do personagem...">
+      <button type="submit">Pesquisar</button>
+    </form>
+  </header>
+  <section id="home-banner">
+    <h2>Explore o Universo Disney</h2>
+    <p>Busque seus personagens favoritos</p>
+  </section>
+  <div class="suggestions fade">
+    <button class="disney">Mickey</button>
+    <button class="disney">Elsa</button>
+    <button class="disney">Buzz</button>
+  </div>
+
+  <main id="cards-container" class="fade"></main>
+  <p id="status" class="fade"></p>
+  <div class="pagination">
+    <button id="prevBtn" disabled>Anterior</button>
+    <span id="pageInfo">Página 1</span>
+    <button id="nextBtn" disabled>Próxima</button>
+  </div>
+
+  <!-- TEMPLATE MODERNO -->
+  <template id="card-template">
+    <div class="card">
+      <img class="card-img">
+      <h3 class="card-title"></h3>
+      <p class="card-film"></p>
+    </div>
+  </template>
+  <footer>
+    <p>&copy; Robson Cassiano - Programação de Sítios Internet - 2026</p>
+  </footer>
+</body>
+
+</html>

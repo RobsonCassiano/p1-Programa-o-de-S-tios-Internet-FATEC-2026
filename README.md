@@ -1,5 +1,7 @@
 # 🚀 Projeto Front-End – Consumo de API com JavaScript
 
+## Nome: Robson Cassiano
+
 Este projeto foi desenvolvido como parte da disciplina de **Programação de Sítios Internet** - FATEC.
 
 ## 🎯 Objetivo
@@ -29,7 +31,7 @@ Criar uma aplicação web utilizando **JavaScript puro (Vanilla JS)** para consu
 
 ## 🔗 Acesse o Projeto
 
-- 💻 GitHub: [COLE AQUI O LINK]
+- 💻 GitHub: [https://github.com/RobsonCassiano]
 - 🌐 GitHub Pages: [COLE AQUI O LINK]
 
 ---
