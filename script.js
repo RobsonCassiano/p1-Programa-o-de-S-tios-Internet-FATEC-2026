@@ -26,12 +26,13 @@ form.addEventListener("submit", (e) => {
 
     if (!value) return;
 
+    currentName = value;
+    currentPage = 1;
+
     fadeOut(suggestions);
-
-
     statusText.textContent = "";
 
-    fetchCharacters(value, 1);
+    fetchCharacters(currentName, currentPage);
 
     fadeIn(container);
 });
@@ -64,7 +65,9 @@ function CardComponent(data) {
 function renderList(list) {
     container.replaceChildren();
 
-    list.slice(0, 12).forEach(item => {
+    // Garante que list seja um array e limita a 12 itens
+    const items = Array.isArray(list) ? list : [list];
+    items.slice(0, 12).forEach(item => {
         const card = CardComponent(item);
         container.appendChild(card);
     });
@@ -74,11 +77,17 @@ async function fetchCharacters(name, page = 1) {
     try {
         statusText.textContent = "Carregando...";
 
-        const res = await fetch(`${API_URL}?name=${name}&page=${page}`);
+        const res = await fetch(`${API_URL}?name=${encodeURIComponent(name)}&page=${page}`);
+
+        if (!res.ok) {
+            throw new Error(`Erro na API: ${res.status}`);
+        }
+
         const data = await res.json();
 
         if (!data.data || data.data.length === 0) {
             statusText.textContent = "Nenhum resultado.";
+            container.replaceChildren();
             return;
         }
 
@@ -105,17 +114,6 @@ prevBtn.addEventListener("click", () => {
     fetchCharacters(currentName, currentPage);
 });
 
-document.querySelectorAll(".suggestions button").forEach(button => {
-    button.addEventListener("click", () => {
-        const value = button.textContent;
-
-        searchInput.value = value;
-        currentPage = 1;
-
-        fetchCharacters(value, currentPage);
-    });
-});
-
 searchInput.addEventListener("input", () => {
     const value = searchInput.value.trim();
 
@@ -139,12 +137,9 @@ searchInput.addEventListener("input", () => {
     }
 });
 
-fadeOut(suggestions);
 
-setTimeout(() => {
-    fetchCharacters(value, 1);
-    fadeIn(container);
-}, 300);
+fadeIn(suggestions);
+fadeOut(container);
 
 suggestionButtons.forEach(button => {
     button.addEventListener("click", () => {
@@ -154,10 +149,9 @@ suggestionButtons.forEach(button => {
         currentName = value;
         currentPage = 1;
 
+        fadeOut(suggestions);
+        fadeIn(container);
+
         fetchCharacters(currentName, currentPage);
     });
 });
-
-
-
-
