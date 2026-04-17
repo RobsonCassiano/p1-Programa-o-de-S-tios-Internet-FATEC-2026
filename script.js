@@ -39,10 +39,12 @@ form.addEventListener("submit", (e) => {
 
 function fadeOut(element) {
     element.classList.add("fade-out");
+    element.style.pointerEvents = "none"; // Impede que o mouse interaja com o elemento invisível
 }
 
 function fadeIn(element) {
     element.classList.remove("fade-out");
+    element.style.pointerEvents = "auto"; // Reativa a interação quando o elemento aparece
 }
 
 
@@ -129,6 +131,7 @@ searchInput.addEventListener("input", () => {
 
 
         currentPage = 1;
+        currentName = ""; // Limpa o nome atual para evitar bugs na paginação
         pageInfo.textContent = "Página 1";
         prevBtn.disabled = true;
         nextBtn.disabled = true;
