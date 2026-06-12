@@ -1,0 +1,35 @@
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(235, 214, 214, 0.1); /* Sombra suave para separação visual */
+    position: sticky; /* Mantém o header fixo no topo */
+    top: 0;
+    z-index: 1000; /* Garante que fique sobre os outros elementos */
+}
+
+.logo img {
+    height: 60px; /* Define um tamanho para a logo */
+    width: auto;
+    max-width: 100%; /* Impede que a logo transborde o container */
+}
+
+/* Ajuste para celulares pequenos */
+@media (max-width: 480px) {
+    .logo img {
+        height: 35px; /* Reduz a altura da logo em telas muito estreitas */
+    }
+}
+
+nav a {
+    color: white; /* Garante que os links apareçam no fundo escuro */
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

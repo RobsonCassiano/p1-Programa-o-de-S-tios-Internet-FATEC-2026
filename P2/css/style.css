@@ -1,0 +1,186 @@
+@import 'header.css';
+@import 'cards.css';
+@import 'forms.css';
+@import 'responsive.css';
+
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Regra Global para Imagens Responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    padding: 20px 40px;
+    flex: 1; /* Faz o conteúdo principal expandir e empurrar o footer */
+}
+
+.hidden { display: none !important; }
+
+/* Classe para esconder elementos visualmente, mas mantê-los para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Estilos Gerais de Botões */
+.btn, .btn-primary, .btn-secondary, .btn-warning, .btn-danger {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn-primary { background-color: var(--primary); color: white; }
+.btn-secondary { background-color: #64748b; color: white; }
+.btn-warning { background-color: #f59e0b; color: #1e293b; } /* Texto escuro para contraste */
+.btn-danger { background-color: #b91c1c; color: white; } /* Vermelho mais escuro para contraste */
+
+.btn:hover, .btn-primary:hover, .btn-secondary:hover, .btn-warning:hover, .btn-danger:hover {
+    opacity: 0.9;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero h1, .hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-banner {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 400px; 
+    object-fit: contain; /* Exibe a imagem inteira sem realizar cortes */
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+/* Toast Notifications */
+#toast-container {
+    position: fixed;
+    top: 20px; /* Mudamos para o topo para não confundir com o footer */
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease-out;
+}
+
+.toast-success { background-color: #10b981; }
+.toast-error { background-color: #ef4444; }
+.toast-info { background-color: #3b82f6; } /* Um azul diferente do primário */
+.toast-warning { background-color: #f59e0b; } /* Laranja para alertas de atenção */
+
+@keyframes slideIn {
+    from { transform: translateY(-100%); opacity: 0; } /* Ajustamos a animação para vir de cima */
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+/* Estrutura da Página de Detalhes */
+.product-details-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.product-image {
+    flex: 1;
+    max-width: 450px;
+}
+
+.product-info {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilos do Breadcrumb */
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos do Rodapé */
+footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer-socials {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
