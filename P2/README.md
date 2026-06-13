@@ -107,15 +107,15 @@ GitHub Pages: []
 
 ## Video Pitch
 
-Link: []
+Link: [https://youtu.be/5VH3aV8C3Tc]
 
 ## Repositório público no GitHub
 
-Link: []
+Link: [https://github.com/fernandoleonid/FATEC-atividades-Programa-o-de-S-tios-Internet-1-2026/issues/26#issue-4584736779]
 
 ## LinKedIn
 
-Link: []
+Link: [https://www.linkedin.com/posts/robson-cassiano-b6a44195_robson-cassiano-p2-issue-26-fernandoleonid-share-7471349394819432448-GBey/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABQtEUIB0pAJj2DHB6qA-kWbV7gqgkmX7I0]
 
 ## Autor
 
